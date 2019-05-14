@@ -7,6 +7,7 @@ library(dplyr)
 library(ggthemes)
 library(extrafont)
 
+
 liga_petice <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Expend_BATCH.csv")
 colnames(liga_petice) <- c("Name_of_Legue","Year","Nationality","Expend_by_player","Expend_INFLACION")
 
