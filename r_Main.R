@@ -29,3 +29,22 @@ gr + theme_tufte() +
 gr +theme( axis.title=element_text(size=17,face="bold"),
            axis.text = element_text(face = "bold", size = 17),
            plot.title = element_text(size = 20, face = "italic",color = "red"))
+
+#######################################################################################################
+# league five with average and relative curves, average league consumption per player + INFLATION
+# Expend_by_player
+gr2 <- ggplot(liga_petice,aes(x = Year, y = Expend_INFLACION , col = Name_of_Legue)) +
+  geom_line(alpha = 0.9) +
+  geom_smooth(lwd = 2, se = FALSE) +
+  scale_y_continuous("Average Expend  per player",labels = scales::comma) +
+  scale_colour_manual(values = c("gray15", "orange4", "cyan4","darkolivegreen","red4")) +
+  labs(title = "Average League player consumption per player + INFLATION",color = " Names of Leagues\n") 
+
+gr2 + theme_tufte() + 
+  theme(
+    legend.position = c(0.7, 0.9),
+    legend.title = element_text(face = "bold", size = 12),)
+
+gr2 +theme( axis.title=element_text(size=17,face="bold"),
+            axis.text = element_text(face = "bold", size = 17),
+            plot.title = element_text(size = 20, face = "italic",color = "gray16"))
