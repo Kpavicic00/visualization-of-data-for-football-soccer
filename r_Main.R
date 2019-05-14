@@ -8,6 +8,9 @@ library(ggthemes)
 library(extrafont)
 
 
+# league five with average and relative curves, average league consumption per player
+# Expend_by_player
+
 liga_petice <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Expend_BATCH.csv")
 colnames(liga_petice) <- c("Name_of_Legue","Year","Nationality","Expend_by_player","Expend_INFLACION")
 
