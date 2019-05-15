@@ -254,12 +254,12 @@ g_Ligue1a +theme( axis.title=element_text(size=17,face="bold"),
                       plot.title = element_text(size = 20, face = "italic",color = "gray16"))
 #####################################################################################################
 
-# load Leagues 
+# load csv stat for Leagues 
 ###########################
 sve_lige <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Expend.csv")
 colnames(sve_lige) <- c("Name_of_Legue","Year","Nationality","Expend_by_player","Expend_INFLACION")
 View(sve_lige)
-#########################
+###########################
 
 
 ############################################
