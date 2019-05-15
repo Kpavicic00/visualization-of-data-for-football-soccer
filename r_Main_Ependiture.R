@@ -262,47 +262,6 @@ View(sve_lige)
 ###########################
 
 
-############################################
-#g5_lige <-ggplot(sve_lige, aes(x = Year,y = Expend_INFLACION, col = Name_of_Legue)) +
-
-#e <- ggplot(ToothGrowth, aes(x = dose, y = len))
-
-
-# prvi uzorak 
-g_rel_Ligues <- ggplot(sve_lige,aes(x = Year,y = Expend_by_player, col = Name_of_Legue)) +
-  geom_boxplot()
-plot(g_rel_Ligues)
-
-# drugi uzorak 
-#ggplot(data, aes(x=wt, y=mpg, fill=cyl)) +
-#  geom_label(label=rownames(data), color="white", size=5)
-
-ggplot(liga_petice,aes(x = Year,y = Expend_by_player, fill = Name_of_Legue)) + 
-  geom_label(label =rownames(liga_petice) , color="white", size=10)
-
-# treci uzorak 
-#p <- gapminder %>%
-#  filter(year==1977) %>%
-#  ggplot( aes(gdpPercap, lifeExp, size = pop, color=continent)) +
-#  geom_point() +
-#  scale_x_log10() +
-#  theme_bw()
-#ggplotly(p)
-
-g_2008 <- sve_lige %>%
-  ggplot(aes(Year,Expend_by_player,color = Name_of_Legue)) +
-  geom_point() +
-  scale_x_log10() +
-  theme_bw()
-plot(g_2008)
-
-ggplot(sve_lige, aes(x = Expend_by_player, y = Year, color = Name_of_Legue)) +
-  geom_point() +
-  scale_x_log10(labels = scales::comma) 
-  #scale_x_continuous() 
-
-# novi graf QQPLOT
-qqplot(sve_lige, aes(x = Name_of_Legue, y = Year)) 
 #############################################
 # expenditures WITHOUT Inflation per  LEAGUE
 # sum of expenditures over the period from the 2000/2001 season until the 2018/2019 season, 
@@ -374,20 +333,6 @@ ggplot(sve_lige, aes(x = Nationality, y = Expend_INFLACION)) +
         plot.title = element_text(size = 20, face = "italic",color = "gray16"))
 ############################################################################################################
 
-ggplot(sve_lige, aes(x = Nationality, y = Expend_INFLACION)) + 
-  labs(title="Ordered Bar Chart", 
-       subtitle="Make Vs Avg. Mileage", 
-       caption="source: mpg")+
-  geom_bar(stat="identity", width=.5, fill="tomato3") +
-  scale_y_continuous(labels = scales::comma) +
-  theme(axis.text.x = element_text(angle=90, vjust=0.6))
-
-#ggplot(cty_mpg, aes(x=make, y=mileage)) + 
- # geom_bar(stat="identity", width=.5, fill="tomato3") + 
- # labs(title="Ordered Bar Chart", 
- #      subtitle="Make Vs Avg. Mileage", 
-#       caption="source: mpg") + 
-  #theme(axis.text.x = element_text(angle=65, vjust=0.6))
 
 
 
