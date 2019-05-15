@@ -10,9 +10,9 @@ library(extrafont)
 liga_petice <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Income_BATCH.csv")
 colnames(liga_petice) <- c("Name_of_Legue","Year","Nationality","Income_by_player","Income_INFLACION")
 
-# 1 verage and Relative  Income for top five Leagues  League player consumption per player
+# 1 verage and Relative  Income for top five Leagues  League player profit per player
 #######################################################################################################
-# league five with average and relative curves, average league consumption per player
+# league five with average and relative curves, average league profit per player
 # Income_by_player
 
 gr <- ggplot(liga_petice,aes(x = Year, y = Income_by_player , col = Name_of_Legue)) +
@@ -32,9 +32,9 @@ gr +theme( axis.title=element_text(size=17,face="bold"),
            plot.title = element_text(size = 20, face = "italic",color = "#285b21"))
 #####################################################################################################
 
-# 2 verage and Relative  Income for top five Leagues  League player consumption per player + INFLATION
+# 2 verage and Relative  Income for top five Leagues  League player profit per player + INFLATION
 #######################################################################################################
-# league five with average and relative curves, average league consumption per player + INFLATION
+# league five with average and relative curves, average league profit per player + INFLATION
 # Income_INFLACION
 
 gr2 <- ggplot(liga_petice,aes(x = Year, y = Income_INFLACION , col = Name_of_Legue)) +
@@ -265,7 +265,7 @@ View(sve_lige)
 #############################################
 # Income WITHOUT Inflation per  LEAGUE
 # sum of expenditures over the period from the 2000/2001 season until the 2018/2019 season, 
-# where the average consumption of the player per player ranged throughout that period
+# where the average profit of the player per player ranged throughout that period
 ############################################################################################################
 ggplot(sve_lige, aes(x = Name_of_Legue, y = Income_by_player)) + 
   labs(title=" Sum of Income", 
@@ -282,7 +282,7 @@ ggplot(sve_lige, aes(x = Name_of_Legue, y = Income_by_player)) +
 #############################################
 # Income WITH Inflation per  LEAGUE
 # sum of Income over the period from the 2000/2001 season until the 2018/2019 season, 
-# where the average consumption of the player per player ranged throughout that period
+# where the average profit of the player per player ranged throughout that period
 ############################################################################################################
 ggplot(sve_lige, aes(x = Name_of_Legue, y = Income_INFLACION)) + 
   labs(title=" Sum of Income WITH Inflation", 
@@ -301,7 +301,7 @@ ggplot(sve_lige, aes(x = Name_of_Legue, y = Income_INFLACION)) +
 #############################################
 # Income WITHOUT Inflation per  Nationality
 # sum of Income over the period from the 2000/2001 season until the 2018/2019 season, 
-# where the average consumption of the player per player ranged throughout that period
+# where the average profit of the player per player ranged throughout that period
 ############################################################################################################
 ggplot(sve_lige, aes(x = Nationality, y = Income_by_player)) + 
   labs(title=" Sum of Income for Nationality", 
@@ -318,7 +318,7 @@ ggplot(sve_lige, aes(x = Nationality, y = Income_by_player)) +
 #############################################
 # Income WITH Inflation per  Nationality
 # sum of Income over the period from the 2000/2001 season until the 2018/2019 season, 
-# where the average consumption of the player per player ranged throughout that period
+# where the average profit of the player per player ranged throughout that period
 ############################################################################################################
 ggplot(sve_lige, aes(x = Nationality, y = Income_INFLACION)) + 
   labs(title=" Sum of Income WITH Inflation for Nationality", 
