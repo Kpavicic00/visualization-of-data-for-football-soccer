@@ -32,17 +32,17 @@ gr +theme( axis.title=element_text(size=17,face="bold"),
            plot.title = element_text(size = 20, face = "italic",color = "#285b21"))
 #####################################################################################################
 
-# 2 verage and Relative  Expenditure for top five Leagues  League player consumption per player + INFLATION
+# 2 verage and Relative  Income for top five Leagues  League player consumption per player + INFLATION
 #######################################################################################################
 # league five with average and relative curves, average league consumption per player + INFLATION
-# Expend_INFLACION
+# Income_INFLACION
 
-gr2 <- ggplot(liga_petice,aes(x = Year, y = Expend_INFLACION , col = Name_of_Legue)) +
+gr2 <- ggplot(liga_petice,aes(x = Year, y = Income_INFLACION , col = Name_of_Legue)) +
   geom_line(alpha = 0.9) +
   geom_smooth(lwd = 2, se = FALSE) +
-  scale_y_continuous("Average Expend  per player",labels = scales::comma) +
+  scale_y_continuous("Average Income  per player",labels = scales::comma) +
   scale_colour_manual(values = c("gray15", "orange4", "cyan4","darkolivegreen","red4")) +
-  labs(title = "Average and Relative  Expenditure for top five Leagues  League player consumption per player + INFLATION",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Incomes for top five Leagues  League player consumption per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 gr2 + theme_tufte() + 
   theme(
@@ -54,20 +54,20 @@ gr2 +theme( axis.title=element_text(size=17,face="bold"),
             plot.title = element_text(size = 20, face = "italic",color = "gray16"))
 #####################################################################################################
 
-# 3 Expenditure with inflation and without inflation
+# 3 Income with inflation and without inflation
 #####################################################################################################
-# Expenditure with inflation and without inflation"
+# Income with inflation and without inflation"
 
-lige <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Expend.csv")
+lige <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Income_BATCH.csv")
 colnames(lige) <- c("Name_of_Legue","Year","Nationality","Income_by_player","Income_INFLACION")
 
 g3 <- ggplot(lige, aes(Year)) +
-  geom_smooth(aes(y = Expend_by_player, colour = "Expenditure without inflation"),lwd = 2, se = F) +
-  geom_smooth(aes(y = Expend_INFLACION, colour = "Expenditure with inflation"),lwd = 2, se = F) +
+  geom_smooth(aes(y = Income_by_player, colour = "Income without inflation"),lwd = 2, se = F) +
+  geom_smooth(aes(y = Income_INFLACION, colour = "Income with inflation"),lwd = 2, se = F) +
   scale_colour_manual(values = c("orange4", "cyan4"))+
   scale_y_continuous(" Expend ",labels = scales::comma)+
   scale_x_continuous(" Year ")+
-  labs(title = "Expenditure with inflation and without inflation",color = " Consumption\n")
+  labs(title = "Income with inflation and without inflation",caption="Transfmarket.com",color = " Earned\n")
 
 g3 + theme( axis.title=element_text(size=17,face="bold",color = "gray16"),
             axis.text = element_text(face = "bold", size = 17,color = "gray16"),
