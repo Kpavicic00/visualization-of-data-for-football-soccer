@@ -74,32 +74,32 @@ g3 + theme( axis.title=element_text(size=17,face="bold",color = "gray16"),
             plot.title = element_text(size = 20, face = "italic",color = "gray16"))
 #####################################################################################################
 
-# 4 Average Expenditure top five Leagues   without inflation
+# 4 Average Income top five Leagues   without inflation
 #####################################################################################################
 #the average cost of a league per player purchased
 
-g4 <- ggplot(liga_petice, aes(x = Year,y = Expend_by_player, col = Name_of_Legue)) +
+g4 <- ggplot(liga_petice, aes(x = Year,y = Income_by_player, col = Name_of_Legue)) +
   geom_smooth(lwd = 2, se = F)+
-  scale_y_continuous(" Expend ",labels = scales::comma)+
+  scale_y_continuous(" Income ",labels = scales::comma)+
   scale_x_continuous(" Year ")+
   scale_colour_manual(values = c("gray15", "orange4", "cyan4","darkolivegreen","red4")) +
-  labs(title = "Average Expenditure top five Leagues   without inflation",color = " Names of Leagues \n")
+  labs(title = "Average Income top five Leagues   without inflation",caption="Transfmarket.com",color = " Names of Leagues \n")
 
 g4 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
            axis.text = element_text(face = "bold", size = 17,color = "gray16"),
            plot.title = element_text(size = 20, face = "italic",color = "gray16"))
 #####################################################################################################
 
-# 5 Relative Expenditure top five Leagues   without inflation 
+# 5 Relative Income top five Leagues   without inflation 
 #####################################################################################################
 #the average cost of a league per player purchased
 
-g5 <-ggplot(liga_petice, aes(x = Year,y = Expend_by_player, col = Name_of_Legue)) +
+g5 <-ggplot(liga_petice, aes(x = Year,y = Income_by_player, col = Name_of_Legue)) +
   geom_line(aes(group = Name_of_Legue)) +
-  scale_y_continuous(" Expend ",labels = scales::comma)+
+  scale_y_continuous(" Income ",labels = scales::comma)+
   scale_colour_manual(values = c("maroon4","green2","red4","brown","midnightblue")) +
   scale_x_continuous(" Year ")+
-  labs(title = "Relative Expenditure top five Leagues   without inflation",color = " Names of Leagues \n")
+  labs(title = "Relative Income top five Leagues   without inflation",caption="Transfmarket.com",color = " Names of Leagues \n")
 
 g5 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
            axis.text = element_text(face = "bold", size = 17,color = "gray16"),
@@ -108,32 +108,32 @@ g5 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
 #####################################################################################################
 
 
-# 6 Average Expenditure top five Leagues   WITH inflation -> Expend_INFLACION
+# 6 Average Income top five Leagues   WITH inflation -> Income_INFLACION
 #####################################################################################################
 #the average cost of a league per player purchased
 
-g4 <- ggplot(liga_petice, aes(x = Year,y = Expend_INFLACION, col = Name_of_Legue)) +
+g4 <- ggplot(liga_petice, aes(x = Year,y = Income_INFLACION, col = Name_of_Legue)) +
   geom_smooth(lwd = 2, se = F)+
-  scale_y_continuous(" Expend ",labels = scales::comma)+
+  scale_y_continuous(" Income ",labels = scales::comma)+
   scale_x_continuous(" Year ")+
   scale_colour_manual(values = c("gray15", "orange4", "cyan4","darkolivegreen","red4")) +
-  labs(title = "Average Expenditure top five Leagues   WITH inflation",color = " Names of Leagues \n")
+  labs(title = "Average Income top five Leagues   WITH inflation",caption="Transfmarket.com",color = " Names of Leagues \n")
 
 g4 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
            axis.text = element_text(face = "bold", size = 17,color = "gray16"),
            plot.title = element_text(size = 20, face = "italic",color = "gray16"))
 #####################################################################################################
 
-# 7 Relative Expenditure top five Leagues   WITH inflation -> Expend_INFLACION
+# 7 Relative Income top five Leagues   WITH inflation -> Income_INFLACION
 #####################################################################################################
 #the average cost of a league per player purchased
 
-g5 <-ggplot(liga_petice, aes(x = Year,y = Expend_INFLACION, col = Name_of_Legue)) +
+g5 <-ggplot(liga_petice, aes(x = Year,y = Income_INFLACION, col = Name_of_Legue)) +
   geom_line(aes(group = Name_of_Legue)) +
-  scale_y_continuous(" Expend ",labels = scales::comma)+
+  scale_y_continuous(" Income ",labels = scales::comma)+
   scale_colour_manual(values = c("maroon4","green2","red4","brown","midnightblue")) +
   scale_x_continuous(" Year ")+
-  labs(title = "Relative Expenditure top five Leagues   WITH inflation",color = " Names of Leagues \n")
+  labs(title = "Relative Income top five Leagues   WITH inflation",caption="Transfmarket.com",color = " Names of Leagues \n")
 
 g5 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
            axis.text = element_text(face = "bold", size = 17,color = "gray16"),
@@ -151,12 +151,12 @@ g5 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
 seriaA <- liga_petice %>%
   filter(Name_of_Legue == "SerieA")
 
-g_seriaA <- ggplot(seriaA,aes(x = Year, y = Expend_INFLACION , col = Name_of_Legue)) +
+g_seriaA <- ggplot(seriaA,aes(x = Year, y = Income_INFLACION , col = Name_of_Legue)) +
   geom_line(alpha = 0.9) +
   geom_smooth(lwd = 2, se = FALSE) +
-  scale_y_continuous("Average Expend  per player",labels = scales::comma) +
+  scale_y_continuous("Average Income  per player",labels = scales::comma) +
   scale_colour_manual(values = c("darkolivegreen")) +
-  labs(title = "Average and Relative  Expenditure for Seria A  per player + INFLATION",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Income for Seria A  per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 g_seriaA + theme_tufte() + 
   theme(
@@ -173,12 +173,12 @@ g_seriaA +theme( axis.title=element_text(size=17,face="bold"),
 Premierleague <- liga_petice %>%
   filter(Name_of_Legue == "PremierLeague")
 
-g_Premierleague <- ggplot(Premierleague,aes(x = Year, y = Expend_INFLACION , col = Name_of_Legue)) +
+g_Premierleague <- ggplot(Premierleague,aes(x = Year, y = Income_INFLACION , col = Name_of_Legue)) +
   geom_line(alpha = 0.9) +
   geom_smooth(lwd = 2, se = FALSE) +
   scale_y_continuous("Average Expend  per player",labels = scales::comma) +
   scale_colour_manual(values = c("cyan4")) +
-  labs(title = "Average and Relative  Expenditure for Premier League  per player + INFLATION",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Expenditure for Premier League  per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 g_Premierleague + theme_tufte() + 
   theme(
@@ -200,7 +200,7 @@ g_Laliga <- ggplot(Laliga,aes(x = Year, y = Expend_INFLACION , col = Name_of_Leg
   geom_smooth(lwd = 2, se = FALSE) +
   scale_y_continuous("Average Expend  per player",labels = scales::comma) +
   scale_colour_manual(values = c("darkorange3")) +
-  labs(title = "Average and Relative  Expenditure for La Liga  per player + INFLATION",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Expenditure for La Liga  per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 g_Laliga + theme_tufte() + 
   theme(
@@ -221,7 +221,7 @@ g_Bundesligaa <- ggplot(Bundesligaa,aes(x = Year, y = Expend_INFLACION , col = N
   geom_smooth(lwd = 2, se = FALSE) +
   scale_y_continuous("Average Expend  per player",labels = scales::comma) +
   scale_colour_manual(values = c("darkred")) +
-  labs(title = "Average and Relative  Expenditure for Bundesliga  per player + INFLATION",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Expenditure for Bundesliga  per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 g_Bundesligaa + theme_tufte() + 
   theme(
@@ -242,7 +242,7 @@ g_Ligue1a <- ggplot(Ligue1a,aes(x = Year, y = Expend_INFLACION , col = Name_of_L
   geom_smooth(lwd = 2, se = FALSE) +
   scale_y_continuous("Average Expend  per player",labels = scales::comma) +
   scale_colour_manual(values = c("darkgreen")) +
-  labs(title = "Average and Relative  Expenditure for Ligue 1  per player + INFLATION",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Expenditure for Ligue 1  per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 g_Ligue1a + theme_tufte() + 
   theme(
