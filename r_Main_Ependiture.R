@@ -10,7 +10,7 @@ library(extrafont)
 liga_petice <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Expend_BATCH.csv")
 colnames(liga_petice) <- c("Name_of_Legue","Year","Nationality","Expend_by_player","Expend_INFLACION")
 
-# 1 verage and Relative  Expenditure for top five Leagues  League player consumption per player
+# 1 average and Relative  Expenditure for top five Leagues  League player consumption per player
 #######################################################################################################
 # league five with average and relative curves, average league consumption per player
 # Expend_by_player
@@ -33,7 +33,7 @@ gr +theme( axis.title=element_text(size=17,face="bold"),
            plot.title = element_text(size = 20, face = "italic",color = "red"))
 #####################################################################################################
 
-# 2 verage and Relative  Expenditure for top five Leagues  League player consumption per player + INFLATION
+# 2 average and Relative  Expenditure for top five Leagues  League player consumption per player + INFLATION
 #######################################################################################################
 # league five with average and relative curves, average league consumption per player + INFLATION
 # Expend_INFLACION

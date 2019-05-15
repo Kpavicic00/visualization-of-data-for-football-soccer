@@ -10,17 +10,17 @@ library(extrafont)
 liga_petice <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Income_BATCH.csv")
 colnames(liga_petice) <- c("Name_of_Legue","Year","Nationality","Income_by_player","Income_INFLACION")
 
-# 1 verage and Relative  Expenditure for top five Leagues  League player consumption per player
+# 1 verage and Relative  Income for top five Leagues  League player consumption per player
 #######################################################################################################
 # league five with average and relative curves, average league consumption per player
-# Expend_by_player
+# Income_by_player
 
-gr <- ggplot(liga_petice,aes(x = Year, y = Expend_by_player , col = Name_of_Legue)) +
+gr <- ggplot(liga_petice,aes(x = Year, y = Income_by_player , col = Name_of_Legue)) +
   geom_line(alpha = 0.9) +
   geom_smooth(lwd = 2, se = FALSE) +
-  scale_y_continuous("Average Expend  per player",labels = scales::comma) +
+  scale_y_continuous("Average Income  per player",labels = scales::comma) +
   scale_colour_manual(values = c("gray15", "orange4", "cyan4","darkolivegreen","red4")) +
-  labs(title = "Average and Relative  Expenditure for top five Leagues  League player consumption per player",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Income for top five Leagues  League player consumption per player",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 gr + theme_tufte() + 
   theme(
@@ -29,7 +29,7 @@ gr + theme_tufte() +
 
 gr +theme( axis.title=element_text(size=17,face="bold"),
            axis.text = element_text(face = "bold", size = 17,color = "gray16"),
-           plot.title = element_text(size = 20, face = "italic",color = "red"))
+           plot.title = element_text(size = 20, face = "italic",color = "#285b21"))
 #####################################################################################################
 
 # 2 verage and Relative  Expenditure for top five Leagues  League player consumption per player + INFLATION
@@ -59,7 +59,7 @@ gr2 +theme( axis.title=element_text(size=17,face="bold"),
 # Expenditure with inflation and without inflation"
 
 lige <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Expend.csv")
-colnames(lige) <- c("Name_of_Legue","Year","Nationality","Expend_by_player","Expend_INFLACION")
+colnames(lige) <- c("Name_of_Legue","Year","Nationality","Income_by_player","Income_INFLACION")
 
 g3 <- ggplot(lige, aes(Year)) +
   geom_smooth(aes(y = Expend_by_player, colour = "Expenditure without inflation"),lwd = 2, se = F) +
@@ -257,7 +257,7 @@ g_Ligue1a +theme( axis.title=element_text(size=17,face="bold"),
 # load csv stat for Leagues 
 ###########################
 sve_lige <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Expend.csv")
-colnames(sve_lige) <- c("Name_of_Legue","Year","Nationality","Expend_by_player","Expend_INFLACION")
+colnames(sve_lige) <- c("Name_of_Legue","Year","Nationality","Income_by_player","Income_INFLACION")
 View(sve_lige)
 ###########################
 
