@@ -47,10 +47,10 @@ gr2 <- ggplot(liga_petice,aes(x = Year, y = Income_INFLACION , col = Name_of_Leg
 gr2 + theme_tufte() + 
   theme(
     legend.position = c(0.7, 0.9),
-    legend.title = element_text(face = "bold", size = 12),)
+    legend.title = element_text(face = "bold", size = 12))
 
 gr2 +theme( axis.title=element_text(size=17,face="bold"),
-            axis.text = element_text(face = "bold", size = 17,,color = "gray16"),
+            axis.text = element_text(face = "bold", size = 17,color = "gray16"),
             plot.title = element_text(size = 20, face = "italic",color = "gray16"))
 #####################################################################################################
 
