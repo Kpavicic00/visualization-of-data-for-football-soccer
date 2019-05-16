@@ -87,6 +87,7 @@ g4 <- ggplot(liga_petice, aes(x = Year,y = Balance_by_player, col = Name_of_Legu
 g4 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
            axis.text = element_text(face = "bold", size = 17,color = "gray16"),
            plot.title = element_text(size = 20, face = "italic",color = "gray16"))
+plot(g4)
 #####################################################################################################
 
 # 5 Relative Balance top five Leagues   without inflation 
@@ -127,7 +128,7 @@ g4 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
 #####################################################################################################
 #the average cost of a league per player purchased
 
-g5 <-ggplot(liga_petice, aes(x = Year,y = Balance_INFLACION, col = Name_of_Legue)) +
+g5 <-ggplot(liga_petice, aes(x =Year,y = Balance_INFLACION, col = Name_of_Legue)) +
   geom_line(aes(group = Name_of_Legue)) +
   scale_y_continuous(" Balance ",labels = scales::comma)+
   scale_colour_manual(values = c("maroon4","green2","red4","brown","midnightblue")) +
