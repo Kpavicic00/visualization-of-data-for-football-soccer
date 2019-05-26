@@ -7,6 +7,11 @@ library(dplyr)
 library(ggthemes)
 library(extrafont)
 
+liga_PETICE <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_GETDataClubs_with_seasons_BATCH.csv")
+colnames(liga_PETICE) <- c("Order","Club","State","Competition","Expenditures",
+                    "Arrivals","Income","Departures","Balance","Season",
+                    "Inflacion_Income","Inflacion_Expenditures","Inflacion_Balance")
+View(liga_PETICE)
 
 
 liga <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_GETDataClubs_with_seasons.csv")
@@ -94,35 +99,66 @@ plot(testni)
 # galktikosi 
 ##########################################
 
-# Spain
-Spain_state  <- liga %>%
-  filter(State == "Spain")
-View(Spain_state)
+# Seria A
+SeriaA <- liga %>%
+  filter(Competition == "SerieA")
+View(SeriaA)
 
+#Bundesliga
+Bundesliga <- liga %>%
+  filter(Competition == "Bundesliga")
+View(Bundesliga)
+
+# Ligue 1
+
+Ligue_1 <- liga %>%
+  filter(Competition == "Ligue1")
+View(Ligue_1)
+##################
 # La Liga
 La_Liga <- liga %>%
   filter(Competition == "LaLiga")
 View(La_Liga)
 
-# RealMadrid
-
-RealMadrid_club <- liga %>%
-  filter(Club == "RealMadrid")
-View(RealMadrid_club)
-
-# FCBarcelona
-
-FCBarcelona_club <- liga %>%
-  filter(Club == "FCBarcelona")
-View(FCBarcelona_club)
-
-# ValenciaCF
-
-RealMadrid_club <- liga %>%
-  filter(Club == "RealMadrid")
-View(RealMadrid_club)
+# Premiership
+Premiership <- liga %>%
+  filter(Competition == "PremierLeague")
+View(Premiership)
+#####################
 
 # AtléticoMadrid
+# drugi tip grafa
+#breaks=c(-100000000,-75000000,-50000000,-25000000,0)
+
+
+testni <- ggplot(Bundesliga,aes(x=Season, y=Club)) +
+  geom_point(aes(col=Club, size=Departures) ) + 
+  geom_smooth(method="loess", se=F,col = "#123675") +
+  scale_size("Departures",labels = scales::comma) +
+  labs(title="\n\n Departures ",
+       y="Name of Club",
+       subtitle="\t Departures for players ",
+       caption="Transfmarket.com",color = "Clubs") +
+  theme(axis.title=element_text(size=10,face="bold",color = "gray16"),
+        axis.text = element_text(face = "bold", size = 10,color = "gray16"),
+        plot.title = element_text(size = 24, face = "italic",color = "gray16"))
+plot(testni)
+
+
+# SeriaA   Bundesliga Ligue_1
+#  "Inflacion_Income","Inflacion_Expenditures","Inflacion_Balance" "Arrivals","Departures"
+ggplot(Ligue_1, aes(x = Club, y = Inflacion_Income )) +
+  labs(title=" Sum of Income for each Club", 
+       subtitle="sum of Income for each Club through all seasons", 
+       caption="Transfmarket.com")+
+  xlab("Name of clubs ")+
+  geom_bar(stat="identity", width=.5, fill="tomato3") +
+  scale_y_continuous("sum of Income ",labels = scales::comma) +
+  theme(axis.text.x = element_text(angle=90, vjust=0.6),
+        axis.title=element_text(size=10,face="bold",color = "gray16"),
+        axis.text = element_text(face = "bold", size = 10,color = "gray16"),
+        plot.title = element_text(size = 20, face = "italic",color = "gray16"))
+
 
 ##########################################
 

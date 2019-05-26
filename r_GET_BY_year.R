@@ -15,6 +15,11 @@ colnames(liga) <- c("Year","Expend","Income","Balance","number_of_Season",
                     "avg_Balance_of_Depatrues","avg_Expend_Season","avg_Income_Season","avg_Balance_Season")
 View(liga)
 
+liga_petice <- liga%>%
+  filter 
+
+View(liga_petice)
+
 # 1. >>>>>>>>>>>>>>>>>> Expend , Income , Balance  
 # relative 
 #########################################################
@@ -26,7 +31,7 @@ g3 <- ggplot(liga, aes(Year)) +
   scale_colour_manual(values = c("orange4", "cyan4","#392168"))+
   scale_y_continuous(" Investment ",labels = scales::comma)+
   scale_x_continuous(" Year ")+
-  labs(title = "Realative Expend <-> Income <-> Balance ",caption="Transfmarket.com",color = " Financial business\n")
+  labs(title = "Realative Expend - Income - Balance ",caption="Transfmarket.com",color = " Financial business\n")
 
 g3 + theme( axis.title=element_text(size=17,face="bold",color = "gray16"),
             axis.text = element_text(face = "bold", size = 17,color = "gray16"),
@@ -75,12 +80,12 @@ g3 + theme( axis.title=element_text(size=17,face="bold",color = "gray16"),
 #########################################################
 
 g3 <- ggplot(liga, aes(Year)) +
-  geom_line(aes(y = sum_of_Arrivlas, colour = "sum_of_Arrivlas"  ),lwd = 3) +
-  geom_line(aes(y = sum_of_Depatrues, colour = "sum_of_Depatrues"),lwd = 3) +
+  geom_line(aes(y = sum_of_Arrivlas, colour = "Sum of Arrivlas"  ),lwd = 3) +
+  geom_line(aes(y = sum_of_Depatrues, colour = "Sum of Depatrues"),lwd = 1) +
   scale_colour_manual(values = c("orange4","#392168"))+
   scale_y_continuous(" Number of player ",labels = scales::comma)+
   scale_x_continuous(" Year ")+
-  labs(title = "Relative  sum of Arrivlas <-> sum of Depatrues",caption="Transfmarket.com",color = " Financial business\n")
+  labs(title = "Relative  sum of Arrivlas - sum of Depatrues",caption="Transfmarket.com",color = " Arivlas and Departures\n")
 
 g3 + theme( axis.title=element_text(size=17,face="bold",color = "gray16"),
             axis.text = element_text(face = "bold", size = 17,color = "gray16"),
@@ -130,7 +135,7 @@ g3 <- ggplot(liga, aes(Year)) +
   scale_colour_manual(values = c("orange4", "cyan4","#392168"))+
   scale_y_continuous(" Investment ",labels = scales::comma)+
   scale_x_continuous(" Year ")+
-  labs(title = "Relative  for AVG Expend of Arrivals <==> AVG Income of Departures <==> AVG Balance of Departures",
+  labs(title = "Relative  for AVG Expend of Arrivals, Income of Departures , Balance of Departures",
        caption="Transfmarket.com",color = " Financial business\n")
 
 g3 + theme( axis.title=element_text(size=17,face="bold",color = "gray16"),
@@ -182,13 +187,13 @@ g3 + theme( axis.title=element_text(size=17,face="bold",color = "gray16"),
 #########################################################
 
 g3 <- ggplot(liga, aes(Year)) +
-  geom_line(aes(y = avg_Expend_Season, colour = "avg_Expend_Season"),lwd = 3) +
-  geom_line(aes(y = avg_Income_Season, colour = "avg_Income_Season"),lwd = 3) +
-  geom_line(aes(y = avg_Balance_Season, colour = "avg_Balance_Season"),lwd = 3) +
+  geom_line(aes(y = avg_Expend_Season, colour = "avg Expend per Season"),lwd = 3) +
+  geom_line(aes(y = avg_Income_Season, colour = "avg Income per Season"),lwd = 3) +
+  geom_line(aes(y = avg_Balance_Season, colour = "avg Balance per Season"),lwd = 3) +
   scale_colour_manual(values = c("orange4", "cyan4","#392168"))+
   scale_y_continuous(" Investment ",labels = scales::comma)+
   scale_x_continuous(" Year ")+
-  labs(title = "Relative  for AVG Expend of Season <==> AVG Income of Season <==> AVG Balance of Season",
+  labs(title = "Relative  for AVG Expend , Income and Balance of Season",
        caption="Transfmarket.com",color = " Financial business\n")
 
 g3 + theme( axis.title=element_text(size=17,face="bold",color = "gray16"),

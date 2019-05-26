@@ -20,7 +20,7 @@ gr <- ggplot(liga_petice,aes(x = Year, y = Expend_by_player , col = Name_of_Legu
   geom_smooth(lwd = 2, se = FALSE) +
   scale_y_continuous("Average Expend  per player",labels = scales::comma) +
   scale_colour_manual(values = c("gray15", "orange4", "cyan4","darkolivegreen","red4")) +
-  labs(title = "Average and Relative  Expenditure for top five Leagues  League player consumption per player",color = " Names of Leagues\n",
+  labs(title = "Average and Relative  Expenditure ",color = " Names of Leagues\n",
        caption="Transfmarket.com") 
 
 gr + theme_tufte() + 
@@ -43,7 +43,7 @@ gr2 <- ggplot(liga_petice,aes(x = Year, y = Expend_INFLACION , col = Name_of_Leg
   geom_smooth(lwd = 2, se = FALSE) +
   scale_y_continuous("Average Expend  per player",labels = scales::comma) +
   scale_colour_manual(values = c("gray15", "orange4", "cyan4","darkolivegreen","red4")) +
-  labs(title = "Average and Relative  Expenditure for top five Leagues  League player consumption per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Expenditure + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 gr2 + theme_tufte() + 
   theme(
@@ -179,7 +179,7 @@ g_Premierleague <- ggplot(Premierleague,aes(x = Year, y = Expend_INFLACION , col
   geom_smooth(lwd = 2, se = FALSE) +
   scale_y_continuous("Average Expend  per player",labels = scales::comma) +
   scale_colour_manual(values = c("cyan4")) +
-  labs(title = "Average and Relative  Expenditure for Premier League  per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Expenditure for Premier League  + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 g_Premierleague + theme_tufte() + 
   theme(
@@ -201,12 +201,12 @@ g_Laliga <- ggplot(Laliga,aes(x = Year, y = Expend_INFLACION , col = Name_of_Leg
   geom_smooth(lwd = 2, se = FALSE) +
   scale_y_continuous("Average Expend  per player",labels = scales::comma) +
   scale_colour_manual(values = c("darkorange3")) +
-  labs(title = "Average and Relative  Expenditure for La Liga  per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
+  labs(title = "Average and Relative  Expenditure for La Liga + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
 
 g_Laliga + theme_tufte() + 
   theme(
     legend.position = c(0.7, 0.9),
-    legend.title = element_text(face = "bold", size = 12),)
+    legend.title = element_text(face = "bold", size = 12))
 
 g_Laliga +theme( axis.title=element_text(size=17,face="bold"),
                         axis.text = element_text(face = "bold", size = 17,,color = "gray16"),

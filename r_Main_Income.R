@@ -58,14 +58,14 @@ gr2 +theme( axis.title=element_text(size=17,face="bold"),
 #####################################################################################################
 # Income with inflation and without inflation"
 
-lige <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Income_BATCH.csv")
+lige <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Income.csv")
 colnames(lige) <- c("Name_of_Legue","Year","Nationality","Income_by_player","Income_INFLACION")
 
 g3 <- ggplot(lige, aes(Year)) +
   geom_smooth(aes(y = Income_by_player, colour = "Income without inflation"),lwd = 2, se = F) +
   geom_smooth(aes(y = Income_INFLACION, colour = "Income with inflation"),lwd = 2, se = F) +
   scale_colour_manual(values = c("orange4", "cyan4"))+
-  scale_y_continuous(" Expend ",labels = scales::comma)+
+  scale_y_continuous(" Income ",labels = scales::comma)+
   scale_x_continuous(" Year ")+
   labs(title = "Income with inflation and without inflation",caption="Transfmarket.com",color = " Earned\n")
 
@@ -95,9 +95,9 @@ g4 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
 #the average cost of a league per player purchased
 
 g5 <-ggplot(liga_petice, aes(x = Year,y = Income_by_player, col = Name_of_Legue)) +
-  geom_line(aes(group = Name_of_Legue)) +
+  geom_line(aes(group = Name_of_Legue),lwd = 2) +
   scale_y_continuous(" Income ",labels = scales::comma)+
-  scale_colour_manual(values = c("maroon4","green2","red4","brown","midnightblue")) +
+  scale_colour_manual(values = c("maroon4","#6b6b04","#210505","brown","midnightblue")) +
   scale_x_continuous(" Year ")+
   labs(title = "Relative Income top five Leagues   without inflation",caption="Transfmarket.com",color = " Names of Leagues \n")
 
@@ -129,9 +129,9 @@ g4 + theme(axis.title=element_text(size=17,face="bold",color = "gray16"),
 #the average cost of a league per player purchased
 
 g5 <-ggplot(liga_petice, aes(x = Year,y = Income_INFLACION, col = Name_of_Legue)) +
-  geom_line(aes(group = Name_of_Legue)) +
+  geom_line(aes(group = Name_of_Legue),lwd = 2) +
   scale_y_continuous(" Income ",labels = scales::comma)+
-  scale_colour_manual(values = c("maroon4","green2","red4","brown","midnightblue")) +
+  scale_colour_manual(values = c("gray15", "orange4", "cyan4","darkolivegreen","red4")) +
   scale_x_continuous(" Year ")+
   labs(title = "Relative Income top five Leagues   WITH inflation",caption="Transfmarket.com",color = " Names of Leagues \n")
 
@@ -174,8 +174,8 @@ Premierleague <- liga_petice %>%
   filter(Name_of_Legue == "PremierLeague")
 
 g_Premierleague <- ggplot(Premierleague,aes(x = Year, y = Income_INFLACION , col = Name_of_Legue)) +
-  geom_line(alpha = 0.9) +
-  geom_smooth(lwd = 2, se = FALSE) +
+  geom_line(alpha = 0.9,lwd = 1) +
+  geom_smooth(lwd = 3, se = FALSE) +
   scale_y_continuous("Average Income  per player",labels = scales::comma) +
   scale_colour_manual(values = c("cyan4")) +
   labs(title = "Average and Relative  Income for Premier League  per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
@@ -196,8 +196,8 @@ Laliga <- liga_petice %>%
   filter(Name_of_Legue == "LaLiga")
 
 g_Laliga <- ggplot(Laliga,aes(x = Year, y = Income_INFLACION , col = Name_of_Legue)) +
-  geom_line(alpha = 0.9) +
-  geom_smooth(lwd = 2, se = FALSE) +
+  geom_line(alpha = 0.9,lwd = 1) +
+  geom_smooth(lwd = 3, se = FALSE) +
   scale_y_continuous("Average Income  per player",labels = scales::comma) +
   scale_colour_manual(values = c("darkorange3")) +
   labs(title = "Average and Relative  Income for La Liga  per player + INFLATION",caption="Transfmarket.com",color = " Names of Leagues\n") 
@@ -247,7 +247,7 @@ g_Ligue1a <- ggplot(Ligue1a,aes(x = Year, y = Income_INFLACION , col = Name_of_L
 g_Ligue1a + theme_tufte() + 
   theme(
     legend.position = c(0.7, 0.9),
-    legend.title = element_text(face = "bold", size = 12),)
+    legend.title = element_text(face = "bold", size = 12))
 
 g_Ligue1a +theme( axis.title=element_text(size=17,face="bold"),
                   axis.text = element_text(face = "bold", size = 17,,color = "gray16"),
@@ -256,7 +256,7 @@ g_Ligue1a +theme( axis.title=element_text(size=17,face="bold"),
 
 # load csv stat for Leagues 
 ###########################
-sve_lige <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Expend.csv")
+sve_lige <- read.csv("/home/kristijan/github/FootballEvolcion/Datas/SaveData/save_csv_Income.csv")
 colnames(sve_lige) <- c("Name_of_Legue","Year","Nationality","Income_by_player","Income_INFLACION")
 View(sve_lige)
 ###########################

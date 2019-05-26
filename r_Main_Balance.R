@@ -32,7 +32,7 @@ gr +theme( axis.title=element_text(size=17,face="bold"),
            plot.title = element_text(size = 20, face = "italic",color = "#285b21"))
 #####################################################################################################
 
-# 2 verage and Relative  Balance for top five Leagues  League player profit per player + INFLATION
+# 2 average and Relative  Balance for top five Leagues  League player profit per player + INFLATION
 #######################################################################################################
 # league five with average and relative curves, average league profit per player + INFLATION
 # Balance_INFLACION
