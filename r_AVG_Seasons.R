@@ -15,7 +15,7 @@ colnames(liga) <- c("Name_of_Legue","Expend","Income","Balance","number_of_Seaso
                            "sum_of_Arrivlas","sum_of_Depatrues","avg_Expend_of_Arrivlas","avg_Income_of_Depatrues",
                            "avg_Balance_of_Depatrues","avg_Expend_Season","avg_Income_Season","avg_Balance_Season")
 
-View(liga)
+View(liga_petice)
 
 
 
@@ -30,7 +30,7 @@ testni <- ggplot(liga,aes(x=Expend, y=Name_of_Legue)) +
   scale_size_continuous(labels = scales::comma)+
   labs(title="\n\n Expend ",
        y="Names of Leagues",
-       subtitle="\t Expend realized by each league with the number of seasons ",
+       subtitle="\t Expend realized by each league+ number of seasons ",
        caption="Transfmarket.com",color = "Number of seasons") +
   theme(axis.title=element_text(size=10,face="bold",color = "gray16"),
         axis.text = element_text(face = "bold", size = 10,color = "gray16"),
@@ -48,7 +48,7 @@ ggplot(liga, aes(x=Expend, y=Name_of_Legue, label=number_of_Season)) +
   geom_text(color="white", size=2) +
   labs(title="\n\nExpend ",
        y="Names of Leagues",
-       subtitle="\t Expend realized by each league with the number of seasons ",
+       subtitle="\t Expend realized by each league+ number of seasons",
        caption="Transfmarket.com" )+
   scale_x_continuous(labels = scales::comma)+
   theme(axis.title=element_text(size=10,face="bold",color = "gray16"),
@@ -86,7 +86,7 @@ testni <- ggplot(liga,aes(x=Income, y=Name_of_Legue)) +
   scale_size_continuous(labels = scales::comma)+
   labs(title="\n\n Income ",
        y="Names of Leagues",
-       subtitle="\t Income realized by each league with the number of seasons ",
+       subtitle="\t Income realized by each league + number of seasons ",
        caption="Transfmarket.com",color = "Number of seasons") +
   theme(axis.title=element_text(size=10,face="bold",color = "gray16"),
         axis.text = element_text(face = "bold", size = 10,color = "gray16"),
@@ -141,7 +141,7 @@ testni <- ggplot(liga,aes(x=Balance, y=Name_of_Legue)) +
   scale_size_continuous(labels = scales::comma)+
   labs(title="\n\n Balance ",
        y="Names of Leagues",
-       subtitle="\t Balance realized by each league with the number of seasons ",
+       subtitle="\t Balance realized by each league + number of seasons ",
        caption="Transfmarket.com",color = "Number of seasons") +
   theme(axis.title=element_text(size=10,face="bold",color = "gray16"),
         axis.text = element_text(face = "bold", size = 10,color = "gray16"),
@@ -195,9 +195,9 @@ testni <- ggplot(liga,aes(x=sum_of_Arrivlas, y=Name_of_Legue)) +
   geom_smooth(method="loess", se=F,col = "#123675") +
   scale_x_continuous(labels = scales::comma)+
   scale_size_continuous(labels = scales::comma)+
-  labs(title="\n\n sum_of_Arrivlas ",
+  labs(title="\n\n Sum of Arrivlas ",
        y="Names of Leagues",
-       subtitle="\t sum_of_Arrivlas realized by each league with the number of seasons ",
+       subtitle="\t Sum of Arrivlas realized by each league with the number of seasons ",
        caption="Transfmarket.com",color = "Number of seasons") +
   theme(axis.title=element_text(size=10,face="bold",color = "gray16"),
         axis.text = element_text(face = "bold", size = 10,color = "gray16"),
@@ -228,8 +228,8 @@ ggplot(liga, aes(x=sum_of_Arrivlas, y=Name_of_Legue, label=number_of_Season)) +
 # sum_of_Arrivlas through league and season number => THIRD type of plot
 #############################################
 ggplot(liga, aes(x = Name_of_Legue, y = sum_of_Arrivlas )) +
-  labs(title=" Sum of sum_of_Arrivlas for each League", 
-       subtitle="sum of sum_of_Arrivlas throught all seasons", 
+  labs(title=" Sum of  Arrivlas for each League", 
+       subtitle="sum of Arrivlas throught all seasons", 
        caption="Transfmarket.com")+
   xlab("Names of Leauges ")+
   geom_bar(stat="identity", width=.5, fill="tomato3") +
@@ -251,9 +251,9 @@ testni <- ggplot(liga,aes(x=sum_of_Depatrues, y=Name_of_Legue)) +
   geom_smooth(method="loess", se=F,col = "#123675") +
   scale_x_continuous(labels = scales::comma)+
   scale_size_continuous(labels = scales::comma)+
-  labs(title="\n\n sum_of_Depatrues ",
+  labs(title="\n\n  Sum of Depatrues ",
        y="Names of Leagues",
-       subtitle="\t sum_of_Depatrues realized by each league with the number of seasons ",
+       subtitle="\t  Sum of Depatrues realized by each league with the number of seasons ",
        caption="Transfmarket.com",color = "Number of seasons") +
   theme(axis.title=element_text(size=10,face="bold",color = "gray16"),
         axis.text = element_text(face = "bold", size = 10,color = "gray16"),
@@ -269,9 +269,9 @@ ggplot(liga, aes(x=sum_of_Depatrues, y=Name_of_Legue, label=number_of_Season)) +
   geom_point(stat='identity',size=8,col="#21471d") +
   scale_color_manual(values = "gray16")+ 
   geom_text(color="white", size=2) +
-  labs(title="\n\n sum_of_Depatrues ",
+  labs(title="\n\n Sum of Depatrues ",
        y="Names of Leagues",
-       subtitle="\t sum_of_Depatrues realized by each league with the number of seasons ",
+       subtitle="\t Sum of Depatrues realized by each league with the number of seasons ",
        caption="Transfmarket.com" )+
   scale_x_continuous(labels = scales::comma)+
   theme(axis.title=element_text(size=10,face="bold",color = "gray16"),
@@ -284,8 +284,8 @@ ggplot(liga, aes(x=sum_of_Depatrues, y=Name_of_Legue, label=number_of_Season)) +
 # sum_of_Depatrues through league and season number => THIRD type of plot
 #############################################
 ggplot(liga, aes(x = Name_of_Legue, y = sum_of_Depatrues )) +
-  labs(title=" Sum of sum_of_Depatrues for each League", 
-       subtitle="sum of sum_of_Depatrues throught all seasons", 
+  labs(title=" Sum of Depatrues for each League", 
+       subtitle="sum of Depatrues throught all seasons", 
        caption="Transfmarket.com")+
   xlab("Names of Leauges ")+
   geom_bar(stat="identity", width=.5, fill="tomato3") +
